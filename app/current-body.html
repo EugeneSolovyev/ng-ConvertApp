@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="current-body">
+            <form>
+                <label for="euro">From Euro:</label>
+                <input type="text" placeholder="Euro" ng-change="tCourse.update()" ng-model="tCourse.euro" class="form-control" id="euro"/>
+                <label for="course">To:</label>
+                <select class="form-control" id="course" ng-change="tChange.update()" ng-model="tCourse.selectedCurrency">
+                    <option ng-repeat="item in tCourse.current" value="{{item.course}}">{{item.name}} - {{item.course}}</option>
+                </select>
+                <div ng-if="tCourse.result" class="total" role="alert">Total: {{tCourse.result}}</div>
+            </form>
+        </div>
+    </div>
+</div>
